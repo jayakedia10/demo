@@ -1,1 +1,40 @@
-
+{
+  "client_id": "onecard",
+  "thresholds": {
+    "pattern": {
+      "lookback_days": 180
+    },
+    "velocity": {
+      "time_window_mins": [1, 2, 3, 5, 10, 15, 20, 60, 360, 1440],
+      "velocity_per_time_window": {
+        "1": 2,
+        "2": 3,
+        "3": 4,
+        "5": 5,
+        "10": 7,
+        "15": 10,
+        "20": 12,
+        "60": 20,
+        "360": 60,
+        "1440": 150
+      },
+      "avg_time_gap_mins": 2
+    },
+    "time_day": {
+      "lookback_days": 60,
+      "amount_variability": 0.3,
+      "absolute_amount_limit": 10000
+    },
+    "amount": {
+      "deviation_threshold": 2.0
+    },
+    "risk_merchant": {
+      "risky_mccs": ["5999", "5541", "7995", "5912"],
+      "risky_countries": ["NG", "RU", "IR", "KP", "AF"],
+      "risky_currencies": ["NGN", "RUB", "IRR", "KPW", "AFN", "SYP", "VES", "ZWL"]
+    },
+    "limits": {
+      "contactless_limit": 5000
+    }
+  }
+}
